@@ -190,24 +190,14 @@ This MVP can evolve into a production-scale Surveillance Platform used by regula
 | 🐘 **Storage (Postgres / Redshift)** | Maintains historical alerts for compliance |
 | 📊 **Visualization (Metabase / QuickSight)** | Enables dashboards for analysts & regulators |
 | ⚡ **Automation (Lambda / Step Functions)** | Schedules alert generation & reporting workflows |
-
 ---
-👤 Author
-Skandana Gowda
----
-
 ## 📌 Notes
-
 The dashboard runs locally using Metabase Open Source, not Metabase Cloud.
 
 All visualizations above were generated from synthetic market data.
-
-This is an MVP prototype, fully functional for demo and educational use.
 ---
 ## 🏁 Summary
-
 This project highlights:
-
 🪶 ETL pipeline design with Apache Airflow
 
 🐍 Rule-based alert generation using Python
@@ -219,3 +209,6 @@ This project highlights:
 🐳 Containerized orchestration using Docker
 
 A complete end-to-end Data Engineering project — simulating a Stock Exchange Market Surveillance System capable of detecting anomalies and visualizing trade alerts in real-time.
+---
+👤 Author
+Skandana Gowd
