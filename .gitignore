@@ -1,0 +1,30 @@
+# macOS system
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+
+# Airflow
+logs/
+dags/__pycache__/
+
+# DBT build
+dbt/target/
+dbt/logs/
+dbt/dbt.log
+
+# Environment files
+.env
+*.env
+
+# Jupyter / temp files
+*.ipynb_checkpoints/
+*.tmp
+
+# Docker
+*.pid
+*.sock
