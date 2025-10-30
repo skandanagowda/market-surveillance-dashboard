@@ -12,7 +12,7 @@ This project demonstrates how trade alerts can be ingested, processed, stored, a
 To design an **end-to-end data pipeline** that continuously monitors market trades, applies surveillance rules, detects anomalies, and visualizes alerts in real-time.
 
 This **MVP prototype** proves how a stock exchange surveillance workflow can be built using open-source tools.  
-It combines **data engineering orchestration (Airflow)**, **data storage (PostgreSQL)**, **alert computation (Python)**, and **visual analytics (Metabase)** — all containerized with **Docker**.
+It uses Apache Airflow for ETL orchestration, DBT (Data Build Tool) for modular data transformation, PostgreSQL for storage, and Metabase for visualization — all containerized using Docker Compose.
 
 ---
 
@@ -162,15 +162,38 @@ docker compose up -d
 ---
 ## 📁 Repository Structure
 ```bash
-market-surveillance-dashboard/
+MARKET-MVP/
 │
-├── dags/                    # Airflow DAGs for ETL + rule processing
-├── data/                    # Raw or synthetic market data
-├── sql/                     # Schema, tables, and alert queries
-├── screenshots/             # Dashboard visualizations
-├── docker-compose.yml       # Full stack deployment
-├── requirements.txt         # Python dependencies
-└── README.md
+├── api/                        # REST API for alerts and rule retrieval
+│   ├── Dockerfile
+│   ├── main.py                 # FastAPI app exposing surveillance endpoints
+│   └── requirements.txt
+│
+├── dags/                       # Airflow DAGs for ETL + rule orchestration
+│   ├── __pycache__/
+│   └── market_surveillance_mvp.py
+│
+├── data/                       # Data assets
+│   ├── raw/                    # Raw or synthetic trade/order data
+│   └── reports/                # Generated market surveillance reports
+│
+├── dbt/                        # Data transformation layer
+│   ├── logs/
+│   ├── models/                 # DBT models for data cleaning & aggregation
+│   ├── target/
+│   ├── .user.yml
+│   ├── dbt_project.yml
+│   └── profiles.yml
+│
+├── docker/airflow/             # Airflow Docker image configuration
+│   └── Dockerfile
+│
+├── scripts/                    # Orchestration and utility scripts
+│   └── docker-compose.yml      # Multi-service local deployment
+│
+├── screenshots/                # Dashboard and workflow visuals
+│
+└── README.md                   # Documentation and usage instructions
 ```
 ## 🌍 Future Enhancements
 
@@ -186,7 +209,8 @@ This MVP can evolve into a production-scale Surveillance Platform used by regula
 | ⚙️ **Module** | 🌍 **Real-World Use Case** |
 |----------------|-----------------------------|
 | 🪶 **Ingestion (Airflow)** | Pulls trade & order data from FIX/ITCH feeds in real-time |
-| 🧮 **Processing (Python)** | Applies statistical or ML-based anomaly detection |
+| 🧮 **Transformation (DBT)** | Cleans, models, and aggregates data into analytical tables |
+| 🐍 **Processing (Python)** | Applies statistical or ML-based anomaly detection |
 | 🐘 **Storage (Postgres / Redshift)** | Maintains historical alerts for compliance |
 | 📊 **Visualization (Metabase / QuickSight)** | Enables dashboards for analysts & regulators |
 | ⚡ **Automation (Lambda / Step Functions)** | Schedules alert generation & reporting workflows |
@@ -199,6 +223,8 @@ All visualizations above were generated from synthetic market data.
 ## 🏁 Summary
 This project highlights:
 🪶 ETL pipeline design with Apache Airflow
+
+🧮 Data transformation and modeling with DBT  
 
 🐍 Rule-based alert generation using Python
 
