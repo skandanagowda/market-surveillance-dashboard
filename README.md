@@ -69,6 +69,7 @@ showing how they can be **automated, tracked, and visualized**.
          │  Metabase Dashboard    │
          │  (visual analytics)    │
          └────────────────────────┘
+```
 ---
 
 ## 📊 Dashboard Overview (Metabase)
