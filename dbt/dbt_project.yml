@@ -1,0 +1,4 @@
+name: market_mvp
+version: 1.0.0
+profile: market_profile
+model-paths: ["models"]
