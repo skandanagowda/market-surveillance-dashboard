@@ -137,24 +137,24 @@ Color-coded heatmap showing alert frequency and severity across all surveillance
 
 ## 💻 Local Setup (Docker)
 
-1️⃣ **Clone the repository**
+1️⃣**Clone the repository**
 ```bash
 git clone https://github.com/<your-username>/market-surveillance-dashboard.git
 cd market-surveillance-dashboard
 ```
-2️⃣ **Start Containers (if docker-compose.yml exists)
+2️⃣**Start Containers (if docker-compose.yml exists)
 ```bash
 docker compose up -d
 ```
 
-3️⃣ **Access the Services
+3️⃣**Access the Services
 | 🧩 **Service** | 🌐 **URL** |
 |----------------|-------------|
 | 🪶 **Airflow UI** | [http://localhost:8080](http://localhost:8080) |
 | 📊 **Metabase UI** | [http://localhost:3000](http://localhost:3000) |
 | 🐘 **PostgreSQL** | `localhost:5432` |
 
-4️⃣ **Default Credentials
+4️⃣**Default Credentials
 | 🧩 **Service** | 👤 **Username** | 🔒 **Password** |
 |----------------|----------------|-----------------|
 | 🪶 **Airflow** | `airflow` | `airflow` |
@@ -183,12 +183,13 @@ market-surveillance-dashboard/
 
 This MVP can evolve into a production-scale Surveillance Platform used by regulatory and compliance teams in real stock exchanges.
 
-Module	Real-World Use Case
-Ingestion (Airflow)	Pulls trade & order data from FIX/ITCH feeds in real-time
-Processing (Python)	Applies statistical or ML-based anomaly detection
-Storage (Postgres / Redshift)	Maintains historical alerts for compliance
-Visualization (Metabase / QuickSight)	Enables dashboards for analysts & regulators
-Automation (Lambda / Step Functions)	Schedules alert generation & reporting workflows
+| ⚙️ **Module** | 🌍 **Real-World Use Case** |
+|----------------|-----------------------------|
+| 🪶 **Ingestion (Airflow)** | Pulls trade & order data from FIX/ITCH feeds in real-time |
+| 🧮 **Processing (Python)** | Applies statistical or ML-based anomaly detection |
+| 🐘 **Storage (Postgres / Redshift)** | Maintains historical alerts for compliance |
+| 📊 **Visualization (Metabase / QuickSight)** | Enables dashboards for analysts & regulators |
+| ⚡ **Automation (Lambda / Step Functions)** | Schedules alert generation & reporting workflows |
 
 👤 Author
 Skandana Gowda
