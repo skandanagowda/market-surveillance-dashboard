@@ -1,6 +1,6 @@
 # 🧠 Market Surveillance Dashboard – Data Engineering MVP for Stock Exchange
 
-A **Data Engineering and Analytics prototype** designed to simulate a **Stock Exchange Market Surveillance System** — similar to what exchanges like **ICE (Intercontinental Exchange)** or **NYSE** use to monitor and detect **trading irregularities, spoofing, and layering patterns**.
+A **Data Engineering and Analytics prototype** designed to simulate a **Stock Exchange Market Surveillance System**, which is used to monitor and detect **trading irregularities, spoofing, and layering patterns**.
 
 This project demonstrates how trade alerts can be ingested, processed, stored, and visualized using a **modern data stack** (Airflow, Docker, Python, PostgreSQL, Metabase).
 
@@ -142,21 +142,26 @@ Color-coded heatmap showing alert frequency and severity across all surveillance
 git clone https://github.com/<your-username>/market-surveillance-dashboard.git
 cd market-surveillance-dashboard
 ```
-2️⃣ Start Containers (if docker-compose.yml exists)
+2️⃣ **Start Containers (if docker-compose.yml exists)
+```bash
 docker compose up -d
+```
 
-3️⃣ Access the Services
-Service	URL
-🪶 Airflow UI	http://localhost:8080
+3️⃣ **Access the Services
+| 🧩 **Service** | 🌐 **URL** |
+|----------------|-------------|
+| 🪶 **Airflow UI** | [http://localhost:8080](http://localhost:8080) |
+| 📊 **Metabase UI** | [http://localhost:3000](http://localhost:3000) |
+| 🐘 **PostgreSQL** | `localhost:5432` |
 
-📊 Metabase UI	http://localhost:3000
+4️⃣ **Default Credentials
+| 🧩 **Service** | 👤 **Username** | 🔒 **Password** |
+|----------------|----------------|-----------------|
+| 🪶 **Airflow** | `airflow` | `airflow` |
+| 🐘 **Postgres** | `admin` | `admin` |
 
-🐘 PostgreSQL	localhost:5432
-4️⃣ Default Credentials
-Service	Username	Password
-Airflow	airflow	airflow
-Postgres	admin	admin
-📁 Repository Structure
+## 📁 Repository Structure
+```bash
 market-surveillance-dashboard/
 │
 ├── dags/                    # Airflow DAGs for ETL + rule processing
@@ -166,8 +171,8 @@ market-surveillance-dashboard/
 ├── docker-compose.yml       # Full stack deployment
 ├── requirements.txt         # Python dependencies
 └── README.md
-
-🌍 Future Enhancements
+```
+##🌍 Future Enhancements
 
 ✅ Integrate live market data streams (Kafka / WebSocket API)
 ✅ Deploy on AWS ECS + RDS + S3 + Glue
@@ -184,12 +189,9 @@ Processing (Python)	Applies statistical or ML-based anomaly detection
 Storage (Postgres / Redshift)	Maintains historical alerts for compliance
 Visualization (Metabase / QuickSight)	Enables dashboards for analysts & regulators
 Automation (Lambda / Step Functions)	Schedules alert generation & reporting workflows
-👤 Author
 
+👤 Author
 Skandana Gowda
-M.S. Computer Science, The George Washington University
-📬 LinkedIn
- • GitHub
 
 📌 Notes
 
