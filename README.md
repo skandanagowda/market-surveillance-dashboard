@@ -197,10 +197,10 @@ MARKET-MVP/
 ```
 ## 🌍 Future Enhancements
 
-- **Integrate live market data streams (Kafka / WebSocket API)
-- **Deploy on AWS ECS + RDS + S3 + Glue
-- **Add ML-based anomaly detection (e.g., Autoencoders for pattern drift)
-- **Implement alert notifications via Slack / SES / SMS
+- Integrate live market data streams (Kafka / WebSocket API)
+- Deploy on AWS ECS + RDS + S3 + Glue
+- Add ML-based anomaly detection (e.g., Autoencoders for pattern drift)
+- Implement alert notifications via Slack / SES / SMS
 
 ## 🧩 Real-World Implementation Possibility
 
