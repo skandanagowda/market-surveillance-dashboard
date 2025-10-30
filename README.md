@@ -137,29 +137,29 @@ Color-coded heatmap showing alert frequency and severity across all surveillance
 
 ## 💻 Local Setup (Docker)
 
-1️⃣**Clone the repository**
+1️⃣ Clone the repository**
 ```bash
 git clone https://github.com/<your-username>/market-surveillance-dashboard.git
 cd market-surveillance-dashboard
 ```
-2️⃣**Start Containers (if docker-compose.yml exists)
+2️⃣ Start Containers (if docker-compose.yml exists)
 ```bash
 docker compose up -d
 ```
-
-3️⃣**Access the Services
+3️⃣ Access the Services
 | 🧩 **Service** | 🌐 **URL** |
 |----------------|-------------|
 | 🪶 **Airflow UI** | [http://localhost:8080](http://localhost:8080) |
 | 📊 **Metabase UI** | [http://localhost:3000](http://localhost:3000) |
 | 🐘 **PostgreSQL** | `localhost:5432` |
 
-4️⃣**Default Credentials
+4️⃣ Default Credentials
 | 🧩 **Service** | 👤 **Username** | 🔒 **Password** |
 |----------------|----------------|-----------------|
 | 🪶 **Airflow** | `airflow` | `airflow` |
 | 🐘 **Postgres** | `admin` | `admin` |
 
+---
 ## 📁 Repository Structure
 ```bash
 market-surveillance-dashboard/
@@ -172,14 +172,14 @@ market-surveillance-dashboard/
 ├── requirements.txt         # Python dependencies
 └── README.md
 ```
-##🌍 Future Enhancements
+## 🌍 Future Enhancements
 
 ✅ Integrate live market data streams (Kafka / WebSocket API)
 ✅ Deploy on AWS ECS + RDS + S3 + Glue
 ✅ Add ML-based anomaly detection (e.g., Autoencoders for pattern drift)
 ✅ Implement alert notifications via Slack / SES / SMS
-
-🧩 Real-World Implementation Possibility
+---
+## 🧩 Real-World Implementation Possibility
 
 This MVP can evolve into a production-scale Surveillance Platform used by regulatory and compliance teams in real stock exchanges.
 
@@ -191,18 +191,20 @@ This MVP can evolve into a production-scale Surveillance Platform used by regula
 | 📊 **Visualization (Metabase / QuickSight)** | Enables dashboards for analysts & regulators |
 | ⚡ **Automation (Lambda / Step Functions)** | Schedules alert generation & reporting workflows |
 
+---
 👤 Author
 Skandana Gowda
+---
 
-📌 Notes
+## 📌 Notes
 
 The dashboard runs locally using Metabase Open Source, not Metabase Cloud.
 
 All visualizations above were generated from synthetic market data.
 
 This is an MVP prototype, fully functional for demo and educational use.
-
-🏁 Summary
+---
+## 🏁 Summary
 
 This project highlights:
 
