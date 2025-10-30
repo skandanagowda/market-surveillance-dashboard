@@ -12,7 +12,7 @@ This project demonstrates how trade alerts can be ingested, processed, stored, a
 To design an **end-to-end data pipeline** that continuously monitors market trades, applies surveillance rules, detects anomalies, and visualizes alerts in real-time.
 
 This **MVP prototype** proves how a stock exchange surveillance workflow can be built using open-source tools.  
-It uses Apache Airflow for ETL orchestration, DBT (Data Build Tool) for modular data transformation, PostgreSQL for storage, and Metabase for visualization — all containerized using Docker Compose.
+It uses **Apache Airflow** for **ETL orchestration**, **DBT (Data Build Tool)** for **modular data transformation**, **PostgreSQL** for **storage**, and **Metabase** for **visualization** — all containerized using **Docker Compose**.
 
 ---
 
@@ -222,6 +222,7 @@ All visualizations above were generated from synthetic market data.
 
 ## 🏁 Summary
 This project highlights:
+
 🪶 ETL pipeline design with Apache Airflow
 
 🧮 Data transformation and modeling with DBT  
