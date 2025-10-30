@@ -117,12 +117,10 @@ Color-coded heatmap showing alert frequency and severity across all surveillance
    - Airflow DAGs simulate continuous trade data ingestion from CSV or APIs.  
    - Cleans timestamps, normalizes symbol names, and formats order types.
 
-2. **Data Transformation (Python):**  
-   - Applies surveillance detection logic for spoofing, layering, quote-stuffing, etc.  
+2. 2. Data Transformation (**DBT**):
+   - Runs `dbt run` to clean, model, and aggregate trade data
+   - Produces analytics-ready tables/views consumed by Metabase  
    - Generates alert tables with fields like:
-     ```sql
-     symbol | timestamp | rule | severity | side | alert_id
-     ```
 
 3. **Storage (PostgreSQL):**  
    - Stores structured alerts for querying and trend analysis.  
@@ -133,6 +131,19 @@ Color-coded heatmap showing alert frequency and severity across all surveillance
    - Interactive dashboards with filters (date range, rule type, severity).  
    - Enables compliance officers to view anomalies and take corrective action.
 
+---
+
+## 🧮 DBT Quickstart (local)
+
+```bash
+# From repo root (adjust path if profiles.yml expects env vars)
+cd dbt
+dbt deps
+dbt build   # or: dbt run && dbt test
+```
+ - Configure connection in dbt/profiles.yml to your local PostgreSQL (from docker-compose).
+ - Point Metabase to the DBT models/tables produced in PostgreSQL.
+   
 ---
 
 ## 💻 Local Setup (Docker)
