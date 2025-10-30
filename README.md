@@ -178,7 +178,7 @@ market-surveillance-dashboard/
 ✅ Deploy on AWS ECS + RDS + S3 + Glue
 ✅ Add ML-based anomaly detection (e.g., Autoencoders for pattern drift)
 ✅ Implement alert notifications via Slack / SES / SMS
----
+
 ## 🧩 Real-World Implementation Possibility
 
 This MVP can evolve into a production-scale Surveillance Platform used by regulatory and compliance teams in real stock exchanges.
@@ -190,12 +190,12 @@ This MVP can evolve into a production-scale Surveillance Platform used by regula
 | 🐘 **Storage (Postgres / Redshift)** | Maintains historical alerts for compliance |
 | 📊 **Visualization (Metabase / QuickSight)** | Enables dashboards for analysts & regulators |
 | ⚡ **Automation (Lambda / Step Functions)** | Schedules alert generation & reporting workflows |
----
+
 ## 📌 Notes
 The dashboard runs locally using Metabase Open Source, not Metabase Cloud.
 
 All visualizations above were generated from synthetic market data.
----
+
 ## 🏁 Summary
 This project highlights:
 🪶 ETL pipeline design with Apache Airflow
@@ -209,6 +209,6 @@ This project highlights:
 🐳 Containerized orchestration using Docker
 
 A complete end-to-end Data Engineering project — simulating a Stock Exchange Market Surveillance System capable of detecting anomalies and visualizing trade alerts in real-time.
----
+
 👤 Author
 Skandana Gowd
