@@ -174,10 +174,10 @@ market-surveillance-dashboard/
 ```
 ## 🌍 Future Enhancements
 
-✅ Integrate live market data streams (Kafka / WebSocket API)
-✅ Deploy on AWS ECS + RDS + S3 + Glue
-✅ Add ML-based anomaly detection (e.g., Autoencoders for pattern drift)
-✅ Implement alert notifications via Slack / SES / SMS
+- **Integrate live market data streams (Kafka / WebSocket API)
+- **Deploy on AWS ECS + RDS + S3 + Glue
+- **Add ML-based anomaly detection (e.g., Autoencoders for pattern drift)
+- **Implement alert notifications via Slack / SES / SMS
 
 ## 🧩 Real-World Implementation Possibility
 
@@ -209,6 +209,3 @@ This project highlights:
 🐳 Containerized orchestration using Docker
 
 A complete end-to-end Data Engineering project — simulating a Stock Exchange Market Surveillance System capable of detecting anomalies and visualizing trade alerts in real-time.
-
-👤 Author
-Skandana Gowd
