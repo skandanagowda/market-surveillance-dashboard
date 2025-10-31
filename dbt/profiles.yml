@@ -3,9 +3,11 @@ market_profile:
   outputs:
     dev:
       type: postgres
-      host: postgres
+      host: localhost
       user: airflow
-      password: airflow
+      password: airflow # or your actual password
       port: 5432
       dbname: airflow
       schema: public
+      threads: 1
+      connect_timeout: 10

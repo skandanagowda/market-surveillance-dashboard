@@ -1,0 +1,39 @@
+version: 2
+
+models:
+  - name: fact_bars_1m
+    description: "Minute bars derived from raw trades/quotes used for surveillance features."
+    columns:
+      - name: ts
+        description: "Bar timestamp (UTC)."
+        tests: [not_null]
+      - name: symbol
+        description: "Instrument symbol."
+        tests: [not_null]
+      - name: open
+        description: "Open price."
+      - name: high
+        description: "High price."
+      - name: low
+        description: "Low price."
+      - name: close
+        description: "Close price."
+      - name: volume
+        description: "Aggregated volume."
+
+  - name: fact_factors
+    description: "Computed surveillance factors and rule hits per symbol/time."
+    columns:
+      - name: ts
+        description: "Observation timestamp (UTC)."
+        tests: [not_null]
+      - name: symbol
+        description: "Instrument symbol."
+        tests: [not_null]
+      - name: rule
+        description: "Surveillance rule (e.g., spoofing, layering, quote_stuffing)."
+        tests: [not_null]
+      - name: severity
+        description: "Categorical severity (Low/Medium/High)."
+      - name: value
+        description: "Score or metric associated with the rule hit."

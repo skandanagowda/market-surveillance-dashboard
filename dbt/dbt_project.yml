@@ -1,4 +1,31 @@
+# dbt_project.yml
 name: market_mvp
 version: 1.0.0
+config-version: 2
+
+# This must match a profile name in ~/.dbt/profiles.yml
 profile: market_profile
+
+# Where dbt looks for stuff inside this project folder (dbt/)
 model-paths: ["models"]
+seed-paths: ["seeds"] # create if/when you add seeds
+test-paths: ["tests"] # create if you want custom tests
+macro-paths: ["macros"] # optional
+snapshot-paths: ["snapshots"] # optional
+analysis-paths: ["analysis"] # optional
+target-path: "target" # compiled artifacts
+clean-targets: ["target", "dbt_packages"]
+
+# Default model behavior for *this* project
+models:
+  market_mvp: # <-- MUST match `name:` above
+    +materialized: table # make all models tables unless overridden
+    +schema: public # use public unless overridden
+    +on_schema_change: append_new_columns
+    # You can get more granular if you later add folders:
+    staging:
+      +materialized: view
+      +schema: staging
+    marts:
+      +materialized: table
+      +schema: marts
