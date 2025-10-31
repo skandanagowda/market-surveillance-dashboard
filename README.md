@@ -2,7 +2,7 @@
 
 A **Data Engineering and Analytics prototype** designed to simulate a **Stock Exchange Market Surveillance System**, which is used to monitor and detect **trading irregularities, spoofing, and layering patterns**.
 
-This project demonstrates how trade alerts can be ingested, processed, stored, and visualized using a **modern data stack** (Airflow, Docker, Python, PostgreSQL, Metabase).
+This project demonstrates how trade alerts can be ingested, processed, stored, and visualized using a **modern data stack** (Airflow, dbt, Docker, Python, PostgreSQL, Metabase).
 
 ---
 
