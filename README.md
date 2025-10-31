@@ -1,4 +1,4 @@
-# 🧠 Market Surveillance Dashboard – Data Engineering MVP for Stock Exchange
+# Market Surveillance Dashboard – Data Engineering MVP for Stock Exchange
 
 A **Data Engineering and Analytics prototype** designed to simulate a **Stock Exchange Market Surveillance System**, which is used to monitor and detect **trading irregularities, spoofing, and layering patterns**.
 
