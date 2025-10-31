@@ -34,7 +34,7 @@ showing how they can be **automated, tracked, and visualized**.
 | Tool / Service | Purpose |
 |----------------|----------|
 | 🐍 **Python** | Cleanses raw market data and computes rule-based alerts |
-| 🧱 **dbt (Data Build Tool)** | for modular data transformation |
+| 🧱 **dbt (Data Build Tool)** | For modular data transformation |
 | 🪶 **Apache Airflow** | Orchestrates ETL jobs for data ingestion and rule execution |
 | 🐘 **PostgreSQL** | Stores structured alert data and trade metrics |
 | 🐳 **Docker** | Containerizes Airflow, PostgreSQL, and Metabase for portability |
