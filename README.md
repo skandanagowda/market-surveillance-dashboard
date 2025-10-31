@@ -44,7 +44,7 @@ showing how they can be **automated, tracked, and visualized**.
 ## 🧱 Architecture
 
 ```text
-         ┌────────────────────────┐
+                  ┌────────────────────────┐
          │     Market Trades      │
          │  (raw CSV / stream)    │
          └──────────┬─────────────┘
@@ -61,13 +61,19 @@ showing how they can be **automated, tracked, and visualized**.
                     ▼
          ┌────────────────────────┐
          │   PostgreSQL Database  │
-         │  (alerts, metadata)    │
+         │  (alerts, metrics)     │
          └──────────┬─────────────┘
                     │
                     ▼
          ┌────────────────────────┐
-         │  Metabase Dashboard    │
-         │  (visual analytics)    │
+         │  dbt Models & Testing  │
+         │ (transform + validate) │
+         └──────────┬─────────────┘
+                    │
+                    ▼
+         ┌────────────────────────┐
+         │   Metabase Dashboard   │
+         │   (visual analytics)   │
          └────────────────────────┘
 ```
 ---
@@ -117,10 +123,10 @@ Color-coded heatmap showing alert frequency and severity across all surveillance
    - Airflow DAGs simulate continuous trade data ingestion from CSV or APIs.  
    - Cleans timestamps, normalizes symbol names, and formats order types.
 
-2. 2. Data Transformation (**DBT**):
-   - Runs `dbt run` to clean, model, and aggregate trade data
-   - Produces analytics-ready tables/views consumed by Metabase  
-   - Generates alert tables with fields like:
+2. **Data Transformation (**DBT**):**
+   - Runs modular **SQL models** that calculate trading metrics.  
+   - Builds analytical tables for **rule-based anomaly detection**.  
+   - Adds **schema-level data tests** for data quality assurance. 
 
 3. **Storage (PostgreSQL):**  
    - Stores structured alerts for querying and trend analysis.  
@@ -133,13 +139,22 @@ Color-coded heatmap showing alert frequency and severity across all surveillance
 
 ---
 
-## 🧮 DBT Quickstart (local)
+## 🧱 dbt Integration
 
+The project includes a modular **dbt transformation layer** that automates validation and analytics-ready data modeling.
+
+### 🔍 Key Features
+- Builds derived views (`fact_bars_1m`, `fact_factors`) from raw trade tables.  
+- Applies rule-based calculations (spread, volatility, fair value).  
+- Runs lightweight data tests (`not_null`, `unique`) for pipeline integrity.  
+- Supports re-materialization for scaling to Redshift or BigQuery.
+
+### 🧮 Run dbt Locally
 ```bash
-# From repo root (adjust path if profiles.yml expects env vars)
 cd dbt
 dbt deps
-dbt build   # or: dbt run && dbt test
+dbt run
+dbt test
 ```
  - Configure connection in dbt/profiles.yml to your local PostgreSQL (from docker-compose).
  - Point Metabase to the DBT models/tables produced in PostgreSQL.
